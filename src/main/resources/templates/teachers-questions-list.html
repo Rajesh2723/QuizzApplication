@@ -226,33 +226,7 @@
                                             	>Delete</a>
                                             </td>
                                         </tr>
-                                        <tr th:each="questionM : ${mathsQuestions}">
-                                            
-                                            <td th:text="${questionM.title}"></td>
-                                            <td th:text="${questionM.subject}"></td>
-                                            <td>
-                                           	 	<a th:href="@{/teacher/question/{id}(id=${questionM.questionId})}"
-                                           	 	class="btn btn-primary" >Update</a>
-                                            	<a th:href="@{/teacher/question/delete/{id}(id=${questionM.questionId})}"
-                                            	class="btn btn-danger"
-                                            	>Delete</a>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr th:each="questionE : ${englishQuestions}">
-                                            
-                                            <td th:text="${questionE.title}"></td>
-                                            <td th:text="${questionE.subject}"></td>
-                                            <td>
-                                           	 	<a th:href="@{/teacher/question/edit/{id}(id=${questionE.questionId})}"
-                                           	 	class="btn btn-primary" >Update</a>
-                                            	<a th:href="@{/teacher/question/delete/{id}(id=${questionE.questionId})}"
-                                            	class="btn btn-danger"
-                                            	>Delete</a>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr th:each="questionP : ${physicsQuestions}">
+                                        <tr th:each="questionP : ${CQuestions}">
                                             
                                             <td th:text="${questionP.title}"></td>
                                             <td th:text="${questionP.subject}"></td>
@@ -265,7 +239,45 @@
                                             </td>
                                             
                                         </tr>
-                                        
+                                        <tr th:each="questionE : ${PYTHONQuestions }">
+                                            
+                                            <td th:text="${questionE.title}"></td>
+                                            <td th:text="${questionE.subject}"></td>
+                                            <td>
+                                           	 	<a th:href="@{/teacher/question/edit/{id}(id=${questionE.questionId})}"
+                                           	 	class="btn btn-primary" >Update</a>
+                                            	<a th:href="@{/teacher/question/delete/{id}(id=${questionE.questionId})}"
+                                            	class="btn btn-danger"
+                                            	>Delete</a>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr th:each="questionP : ${JAVASCRIPTQuestions }">
+                                            
+                                            <td th:text="${questionP.title}"></td>
+                                            <td th:text="${questionP.subject}"></td>
+                                            <td>
+                                           	 	<a th:href="@{/teacher/question/edit/{id}(id=${questionP.questionId})}"
+                                           	 	class="btn btn-primary" >Update</a>
+                                            	<a th:href="@{/teacher/delete/{id}(id=${questionP.questionId})}"
+                                            	class="btn btn-danger"
+                                            	>Delete</a>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr th:each="questionR : ${GoQuestions}">
+                                            
+                                            <td th:text="${questionR.title}"></td>
+                                            <td th:text="${questionR.subject}"></td>
+                                            <td>
+                                           	 	<a th:href="@{/teacher/question/edit/{id}(id=${questionR.questionId})}"
+                                           	 	class="btn btn-primary" >Update</a>
+                                            	<a th:href="@{/teacher/delete/{id}(id=${questionR.questionId})}"
+                                            	class="btn btn-danger"
+                                            	>Delete</a>
+                                            </td>
+                                            
+                                        </tr>
                                 
                                     
                                     </tbody>

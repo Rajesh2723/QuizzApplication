@@ -184,12 +184,12 @@ public class TeacherController {
 	@GetMapping("/teacher/questions/list")
 	public String showAllQuestionsPage(Model model) {
 		List<Question> JAVAQuestions = questionService.getAllQuestionsBySubject("JAVA");
-		List<Question> CQuestions = questionService.getAllQuestionsBySubject("C++");
+		List<Question> CQuestions = questionService.getAllQuestionsBySubject("C");
 		List<Question> PYTHONQuestions = questionService.getAllQuestionsBySubject("PYTHON");
 		List<Question> JAVASCRIPTQuestions = questionService.getAllQuestionsBySubject("JAVASCRIPT");
 		List<Question> GoQuestions = questionService.getAllQuestionsBySubject("Go");
 		model.addAttribute("JAVAQuestions", JAVAQuestions);
-		model.addAttribute("C++Questions", CQuestions);
+		model.addAttribute("CQuestions", CQuestions);
 		model.addAttribute("PYTHONQuestions", PYTHONQuestions);
 		model.addAttribute("JAVASCRIPTQuestions", JAVASCRIPTQuestions);
 		model.addAttribute("GoQuestions", GoQuestions);

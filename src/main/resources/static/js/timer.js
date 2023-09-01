@@ -1,5 +1,5 @@
 
-  let startTime = 1;
+  const startTime = 1;
   let time = startTime * 60;
   let refreshIntervalId = setInterval(updateCountdown, 1000);
 
@@ -11,6 +11,9 @@
       contdownEl.innerHTML = `${minutes}:${seconds}`;
       time--;
       if (time < 0) { //stop the setInterval whe time = 0 for avoid negative time
+      document.getElementById("form").submit();
           clearInterval(refreshIntervalId);
       }
-  }
+ }  
+ 
+  

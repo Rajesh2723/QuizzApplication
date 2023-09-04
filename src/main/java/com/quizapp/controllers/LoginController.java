@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.quizapp.dto.ForgotPasswordDTO;
-import com.quizapp.models.Admin;
+ 
 import com.quizapp.models.Student;
 import com.quizapp.models.Teacher;
-import com.quizapp.repositories.AdminRepository;
+ 
 import com.quizapp.repositories.StudentRepository;
 import com.quizapp.services.TeacherService;
 
@@ -23,8 +23,7 @@ public class LoginController {
 	@Autowired
 	private StudentRepository studentRepository;
 	
-	@Autowired
-	private AdminRepository adminRepository;
+	 
 	
 	@Autowired
 	private TeacherService teacherService;
@@ -58,18 +57,7 @@ public class LoginController {
 		return "redirect:/login/student?error";
  	}
  	
- 	@PostMapping("/admin")
- 	public String loginAdmin(@ModelAttribute("admin") Admin admin) {
- 		Admin savedAdmin = adminRepository.findByusername(admin.getUsername());
- 		if(savedAdmin != null) {
- 			ContextController.setAdmin(savedAdmin);
- 			if(savedAdmin.getPassword().equalsIgnoreCase(admin.getPassword())) {
- 				return "redirect:/admin/dashboard";
- 			}
- 		}
- 		System.out.println("Admin Login failed");
-		return "redirect:/login/admin?error";
- 	}
+  
  	
  	@PostMapping("/teacher")
  	public String loginTeacher(@ModelAttribute("teacher") Teacher teacher) {

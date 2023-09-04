@@ -2,7 +2,7 @@ package com.quizapp.controllers;
 
 import java.util.List;
 
-import com.quizapp.models.Admin;
+ 
 import com.quizapp.models.Question;
 import com.quizapp.models.Quiz;
 import com.quizapp.models.Session;
@@ -12,18 +12,14 @@ import com.quizapp.models.Teacher;
 public class ContextController {
 
 	public static Student student;
-	public static Admin admin;
+	 
 	public static Teacher teacher;
 	public static Session session;
 	public static Quiz quiz;
 	public static List<Question> questions;
 	
-	public static Admin getAdmin() {
-		return admin;
-	}
-	public static void setAdmin(Admin admin) {
-		ContextController.admin = admin;
-	}
+	 
+	 
 	public static Student getStudent() {
 		return student;
 	}

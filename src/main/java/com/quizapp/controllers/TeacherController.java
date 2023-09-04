@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.quizapp.dto.QuestionsDTO;
-import com.quizapp.models.Admin;
+ 
 import com.quizapp.models.Option;
 import com.quizapp.models.Question;
 import com.quizapp.models.Session;
@@ -69,16 +69,7 @@ public class TeacherController {
 		return "admin-teacher-edit";
 	}
 
-	@PostMapping("/teacher/edit/{id}")
-	public String updateAdminDetails(@PathVariable Long id, @ModelAttribute("admin") Admin admin, Model model) {
-		Teacher existingTeacher = teacherService.getTeacherById(id);
-		existingTeacher.setFirstName(admin.getFirstName());
-		existingTeacher.setLastName(admin.getLastName());
-		existingTeacher.setUsername(admin.getUsername());
-		existingTeacher.setPassword(admin.getPassword());
-		teacherService.saveTeacher(existingTeacher);
-		return "redirect:/admin/dashboard";
-	}
+	 
 
 	@GetMapping("/teacher/delete/{id}")
 	public String deleteTeacherDetails(@PathVariable Long id, Model model) {

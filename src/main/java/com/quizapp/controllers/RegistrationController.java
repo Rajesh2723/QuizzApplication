@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.quizapp.dto.UserDTO;
-import com.quizapp.models.Admin;
+ 
 import com.quizapp.models.Student;
 import com.quizapp.models.Teacher;
 
@@ -37,14 +37,7 @@ public class RegistrationController {
 			student.setUsername(userDto.getUsername());
 			student.setPassword(userDto.getPassword());
 			studentService.saveStudent(student);
-		} else if (userDto.getRole().equalsIgnoreCase("admin")) {
-			Admin admin = new Admin();
-			admin.setFirstName(userDto.getFirstName());
-			admin.setLastName(userDto.getLastName());
-			admin.setUsername(userDto.getUsername());
-			admin.setPassword(userDto.getPassword());
-			
-		} else if (userDto.getRole().equalsIgnoreCase("teacher")) {
+		}   else if (userDto.getRole().equalsIgnoreCase("teacher")) {
 			Teacher teacher = new Teacher();
 			teacher.setFirstName(userDto.getFirstName());
 			teacher.setLastName(userDto.getLastName());
